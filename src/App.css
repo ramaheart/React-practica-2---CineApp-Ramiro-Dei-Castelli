@@ -1,0 +1,194 @@
+.activo {
+    background-color: #e50914;
+    color: white;
+}
+
+:root {
+    --fondo: #141414;
+    --tarjeta: #1f1f1f;
+    --texto: #f1f1f1;
+    --texto-suave: #a3a3a3;
+    --acento: #e50914;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+h1 {
+    color: var(--acento);
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+/* ---------- Filtros ---------- */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.filtros button {
+    background: #2b2b2b;
+    color: var(--texto);
+    border: 1px solid #3a3a3a;
+    padding: 8px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.filtros button:hover {
+    background: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+.filtros button.activo {
+    background: var(--acento);
+    border-color: var(--acento);
+    color: white;
+    font-weight: 600;
+}
+
+/* ---------- Carga ---------- */
+.cargando {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 1.2rem;
+    margin-top: 60px;
+}
+
+/* ---------- Grilla y tarjetas ---------- */
+.grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--tarjeta);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.card-info h2 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.badge {
+    align-self: flex-start;
+    background: rgba(229, 9, 20, 0.18);
+    color: #ff6b73;
+    border: 1px solid var(--acento);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+}
+
+.btn-trailer {
+    margin-top: auto;
+    background: var(--acento);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-trailer:hover {
+    background: #ff1f2b;
+}
+
+/* ---------- Modal ---------- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 100;
+}
+
+.modal {
+    background: var(--tarjeta);
+    width: 100%;
+    max-width: 720px;
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal h2 {
+    margin: 0 0 4px;
+}
+
+.modal-meta {
+    color: var(--texto-suave);
+    margin: 0 0 12px;
+}
+
+.modal iframe {
+    margin: 16px 0;
+    display: block;
+}
+
+.btn-cerrar {
+    background: transparent;
+    color: var(--texto);
+    border: 1px solid #555;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cerrar:hover {
+    background: #333;
+}
